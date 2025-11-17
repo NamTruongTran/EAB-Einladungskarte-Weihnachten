@@ -77,7 +77,7 @@ async function handleLogin(e) {
 
     } catch (error) {
         console.error('Login failed:', error);
-        loginError.textContent = error.message || 'Invalid email or password';
+        loginError.textContent = error.message || 'Ungültige Email oder Passwort';
         loginError.style.display = 'block';
         loginBtn.disabled = false;
         loginBtn.textContent = 'Login';
