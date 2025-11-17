@@ -1,10 +1,12 @@
 
-(function() {
+(function () {
     'use strict';
 
     // Supabase Configuration
-    const SUPABASE_URL = 'https://wmbucfrspxxrbmafygvx.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndtYnVjZnJzcHh4cmJtYWZ5Z3Z4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxNjE5MzMsImV4cCI6MjA3ODczNzkzM30.NcmT9seEx5B1jiLaEwyiPPtiRU8PWyhRBD0p0-Klxwo';
+    const SUPABASE_URL = 'https://vehkvplfdphxoffbmiyk.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlaGt2cGxmZHBoeG9mZmJtaXlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzNzE4MjUsImV4cCI6MjA3ODk0NzgyNX0.xeXsPGZvXaq2Md9_u7eezmg7JpfXEbI2zxDsfc385I0';
+
+    // Initialize Supabase client
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     const timeScale = 1.5;
@@ -114,11 +116,11 @@
         };
 
         return {
-            lightest: lighten(0.15),    
-            light: lighten(0.05),        
-            base: baseColor,             
-            medium: darken(0.1),         
-            dark: darken(0.2)            
+            lightest: lighten(0.15),
+            light: lighten(0.05),
+            base: baseColor,
+            medium: darken(0.1),
+            dark: darken(0.2)
         };
     }
 
@@ -178,22 +180,22 @@
             document.querySelector('.envelope_front').style.backgroundImage = `url('${frontSvgUrl}')`;
 
             const backColorMap = {
-                '#DFC49F': shades.light,     
-                '#D5BC96': shades.medium,    
-                '#E7CDA8': shades.base       
+                '#DFC49F': shades.light,
+                '#D5BC96': shades.medium,
+                '#E7CDA8': shades.base
             };
             const backSvgUrl = await loadAndColorSVG('images/envelope_back.svg', backColorMap);
             document.querySelector('.envelope_back_outside').style.backgroundImage = `url('${backSvgUrl}')`;
 
             const flapClosedColorMap = {
-                '#D5BC96': shades.medium     
+                '#D5BC96': shades.medium
             };
             const flapClosedUrl = await loadAndColorSVG('images/flap_closed.svg', flapClosedColorMap);
             document.querySelector('.flap_outside').style.backgroundImage = `url('${flapClosedUrl}')`;
 
             const flapOpenedColorMap = {
-                '#CEB38B': shades.medium,    
-                '#efefef': shades.lightest   
+                '#CEB38B': shades.medium,
+                '#efefef': shades.lightest
             };
             const flapOpenedUrl = await loadAndColorSVG('images/flap_opened.svg', flapOpenedColorMap);
             document.querySelector('.flap_inside').style.backgroundImage = `url('${flapOpenedUrl}')`;
@@ -317,11 +319,11 @@
         });
     }
 
-    window.restartAnimation = function() {
+    window.restartAnimation = function () {
         location.reload();
     };
 
-    window.getTimeScale = function() {
+    window.getTimeScale = function () {
         return timeScale;
     };
 
