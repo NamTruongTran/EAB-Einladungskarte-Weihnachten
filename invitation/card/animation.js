@@ -155,13 +155,13 @@
 
         const cardMessage = document.querySelector('.card-message');
         if (cardMessage) {
-            const message = friend.customFrontMessage || globalSettings.cardFrontMessage || 'Wishing you a wonderful Christmas!';
+            const message = friend.customFrontMessage || globalSettings.cardFrontMessage || 'Wir wünschen Ihnen und Ihrer Familie schöne Weihnachten und ein guten Rutsch ins neue Jahr';
             cardMessage.textContent = message;
         }
 
         const cardBackContent = document.querySelector('.card-back-content');
         if (cardBackContent) {
-            const message = friend.customBackMessage || globalSettings.cardBackMessage || 'I wish you all the best for the future.';
+            const message = friend.customBackMessage || globalSettings.cardBackMessage || 'Wir wünschen Ihnen und Ihrer Familie schöne Weihnachten und ein guten Rutsch ins neue Jahr';
             const formattedMessage = message.replace(/\n/g, '<br>');
             cardBackContent.innerHTML = `<p>${formattedMessage}</p>`;
         }

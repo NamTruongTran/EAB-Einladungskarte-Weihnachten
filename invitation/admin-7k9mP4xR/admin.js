@@ -8,8 +8,8 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let appState = {
     globalSettings: {
         senderName: 'Max Mustermann',
-        cardFrontMessage: 'Wishing you a wonderful Christmas!',
-        cardBackMessage: 'I wish you all the best for the future. May this holiday season bring you joy and happiness.',
+        cardFrontMessage: 'UND EINEN ERFOLGREICHEN START IN DAS NEUE JAHR !',
+        cardBackMessage: 'Wir wünschen Ihnen und Ihrer Familie schöne Weihnachten und ein guten Rutsch ins neue Jahr.',
         envelopeColor: '#E7CDA8',
         envelopeTextColor: '#5a4a3a',
         titleColor: '#2c5f2d',
@@ -340,8 +340,8 @@ function renderLinksList() {
                     <div class="link-url" title="${url}">...?code=${code}</div>
                 </div>
                 <div class="link-actions">
-                    <button class="btn btn-outline btn-sm" onclick="copyLink('${url}')">📋 Copy</button>
-                    <button class="btn btn-primary btn-sm" onclick="openCardPreview('${url}')">👁️ Preview</button>
+                    <button class="btn btn-outline btn-sm" onclick="copyLink('${url}')">📋 Kopieren</button>
+                    <button class="btn btn-primary btn-sm" onclick="openCardPreview('${url}')">👁️ Vorschau</button>
                 </div>
             </div>
         `;
