@@ -77,7 +77,13 @@ async function handleLogin(e) {
 
     } catch (error) {
         console.error('Login failed:', error);
-        loginError.textContent = error.message || 'Ungültige Email oder Passwort';
+
+        // loginError.textContent = error.message || 'Ungültige Email oder Passwort';
+        // loginError.style.display = 'block';
+
+        // Immer deutsche Meldung anzeigen, egal was Supabase zurückgibt
+        loginError.textContent = 'E-Mail oder Passwort ist falsch.';
+
         loginError.style.display = 'block';
         loginBtn.disabled = false;
         loginBtn.textContent = 'Login';
