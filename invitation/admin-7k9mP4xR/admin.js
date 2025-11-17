@@ -370,8 +370,8 @@ function renderEmailTemplates() {
                 <div class="email-template-header" onclick="toggleEmailAccordion(${index})">
                     <h3>${escapeHtml(friend.name)} <span class="friend-code">#${friend.code || '????'}</span></h3>
                     <div style="display: flex; gap: 8px; align-items: center;">
-                        <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); copyEmailTemplate(${index})">📋 Copy Email</button>
-                        <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation(); copyEmailHTML(${index})">📄 Copy HTML</button>
+                        <button class="btn btn-primary btn-sm" onclick="event.stopPropagation(); copyEmailTemplate(${index})">📋 Email Kopieren</button>
+                        <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation(); copyEmailHTML(${index})">📄 HTML Kopieren</button>
                         <span class="accordion-icon">▼</span>
                     </div>
                 </div>
@@ -413,7 +413,7 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                     <tr>
                         <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, ${envelopeColor} 0%, ${darkerShade} 100%); border-radius: 8px 8px 0 0;">
                             <p style="margin: 0 0 12px 0; font-size: 14px; color: ${envelopeTextColor}; opacity: 0.8; font-family: 'Dancing Script', cursive;">From: ${senderName}</p>
-                            <h1 style="margin: 0; color: ${envelopeTextColor}; font-size: 32px; font-family: Georgia, 'Times New Roman', serif;">🎄 Merry Christmas! 🎄</h1>
+                            <h1 style="margin: 0; color: ${envelopeTextColor}; font-size: 32px; font-family: Georgia, 'Times New Roman', serif;">🎄 Frohe Weihnachten! 🎄</h1>
                         </td>
                     </tr>
 
