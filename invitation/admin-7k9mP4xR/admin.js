@@ -402,7 +402,7 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merry Christmas from ${senderName}</title>
+    <title>Frohe Weihnachten Von ${senderName}</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4;">
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
@@ -423,11 +423,11 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                             <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6; color: #333333;">Hi ${recipientName},</p>
 
                             <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #555555;">
-                                Wishing you a wonderful Christmas and a happy New Year! I hope this holiday season brings you lots of joy and happiness.
+                               Ich wünsche dir ein wunderbares Weihnachtsfest und ein glückliches neues Jahr! Ich hoffe, dass diese Feiertage dir viel Freude und Glück bringen !
                             </p>
 
                             <p style="margin: 0 0 30px; font-size: 16px; line-height: 1.6; color: #555555;">
-                                Click below to view your card:
+                                Klicke Unten auf "Karte öffnen" um dir die Karte anzuschauen:
                             </p>
 
                             <!-- CTA Button -->
@@ -435,7 +435,7 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                                 <tr>
                                     <td style="padding: 0 0 20px; text-align: center;">
                                         <a href="${cardUrl}" style="display: inline-block; padding: 16px 40px; background-color: ${envelopeColor}; color: ${envelopeTextColor}; text-decoration: none; border-radius: 6px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-                                            🎁 View Card
+                                            🎁 Karte Öffnen
                                         </a>
                                     </td>
                                 </tr>
