@@ -7,7 +7,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let appState = {
     globalSettings: {
-        senderName: 'Andrew Reinert',
+        senderName: 'Max Mustermann',
         cardFrontMessage: 'Wishing you a wonderful Christmas!',
         cardBackMessage: 'I wish you all the best for the future. May this holiday season bring you joy and happiness.',
         envelopeColor: '#E7CDA8',
@@ -83,8 +83,8 @@ async function handleLogin(e) {
 
         // Immer deutsche Meldung anzeigen, egal was Supabase zurückgibt
         loginError.textContent = 'E-Mail oder Passwort ist falsch.';
-
         loginError.style.display = 'block';
+
         loginBtn.disabled = false;
         loginBtn.textContent = 'Login';
     }
@@ -325,7 +325,7 @@ function renderLinksList() {
     const baseUrl = window.location.origin + window.location.pathname.replace(/admin-[^\/]+\/.*$/, 'card/index.html');
 
     if (appState.friends.length === 0) {
-        container.innerHTML = '<p class="empty-state">No friends added yet. Add friends to generate links.</p>';
+        container.innerHTML = '<p class="empty-state">Noch keine Personen hinzugefügt. Füge eine Person hinzu um Link zu generieren.</p>';
         return;
     }
 
@@ -613,7 +613,7 @@ function copyEmailHTML(index) {
 }
 
 function openAddFriendModal() {
-    document.getElementById('modalTitle').textContent = 'Add Friend';
+    document.getElementById('modalTitle').textContent = 'Freund Hinzufügen';
     document.getElementById('editFriendIndex').value = '';
     document.getElementById('friendName').value = '';
     document.getElementById('friendEmail').value = '';
@@ -757,11 +757,11 @@ async function saveFriend() {
 
         closeFriendModal();
         await loadData(); // Reload to get updated data
-        showNotification('Friend saved successfully!', 'success');
+        showNotification('Person erfolgreich gespeichert!', 'Erfolgreich');
     } catch (error) {
-        console.error('Save friend failed:', error);
+        console.error('Person konnte nicht gespeichert werden:', error);
         updateStatusIndicator('error');
-        showNotification(`Error saving friend: ${error.message}`, 'error');
+        showNotification(`Error Person konnte nicht gespeichert werden: ${error.message}`, 'error');
     }
 }
 
@@ -825,10 +825,10 @@ function updateStatusIndicator(status) {
     indicator.className = 'status-indicator';
 
     if (status === 'loading') {
-        statusText.textContent = 'Saving...';
+        statusText.textContent = 'Speichern...';
     } else if (status === 'connected') {
         indicator.classList.add('connected');
-        statusText.textContent = 'Saved';
+        statusText.textContent = 'Gespeichert';
     } else if (status === 'error') {
         indicator.classList.add('error');
         statusText.textContent = 'Error';
