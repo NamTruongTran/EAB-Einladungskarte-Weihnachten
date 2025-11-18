@@ -419,7 +419,7 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
 
                     <!-- Body -->
                     <tr>
-                        <td style="padding: 40px;">
+                        <td style="padding: 40px; text-align: center;">
                             <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6; color: #333333;">Hallo ${recipientName},</p>
 
                             <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #555555;">
@@ -432,31 +432,43 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
 
                             <!-- CTA Button -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <td align="center" style="padding: 0 0 20px;">
-                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                            <tr>
-                                                <td bgcolor="${envelopeColor}"
-                                                    style="background-color:${envelopeColor};
-                                                           border-radius:6px;
-                                                           padding:16px 40px;">
-                                                    <a href="${cardUrl}"
-                                                       style="font-size:18px;
-                                                              font-family: Arial, Helvetica, sans-serif;
-                                                              font-weight:bold;
-                                                              color:${envelopeTextColor};
-                                                              text-decoration:none;
-                                                              display:inline-block;">
-                                                        🎁 Karte Öffnen
-                                                    </a>
-                                                </td>
-                                            </tr>
+                              <tr>
+                                <td align="center" style="padding: 0 0 20px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                      <td bgcolor="${envelopeColor}"
+                                          style="background-color:${envelopeColor};
+                                                 border-radius:6px;
+                                                 padding:12px 32px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                          <tr>
+                            
+                                            <!-- ICON NICHT MEHR VERLINKT -> KEIN STRICH -->
+                                            <td style="padding-right:8px; font-size:18px;">
+                                              🎁
+                                            </td>
+                            
+                                            <!-- NUR DER TEXT ist verlinkt -->
+                                            <td>
+                                              <a href="${cardUrl}"
+                                                 style="display:inline-block;
+                                                        font-size:18px;
+                                                        font-family: Arial, Helvetica, sans-serif;
+                                                        font-weight:bold;
+                                                        color:${envelopeTextColor};
+                                                        text-decoration:underline;">
+                                                Karte Öffnen
+                                              </a>
+                                            </td>
+                            
+                                          </tr>
                                         </table>
-                                    </td>
-                                </tr>
-                            </table> 
-                        </td>
-                    </tr>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
 
                     <!-- Footer -->
                     <tr>
@@ -925,12 +937,12 @@ document.addEventListener('keydown', (e) => {
 
 
 //Karte Öffnen
-// <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-//     <tr>
-//         <td style="padding: 0 0 20px; text-align: center;">
-//             <a href="${cardUrl}" style="display: inline-block; padding: 16px 40px; background-color: ${envelopeColor}; color: ${envelopeTextColor}; text-decoration: none; border-radius: 6px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-//                 🎁 Karte Öffnen
-//             </a>
-//         </td>
-//     </tr>
-// </table>
+{/* <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td style="padding: 0 0 20px; text-align: center;">
+            <a href="${cardUrl}" style="display: inline-block; padding: 16px 40px; background-color: ${envelopeColor}; color: ${envelopeTextColor}; text-decoration: none; border-radius: 6px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                🎁 Karte Öffnen
+            </a>
+        </td>
+    </tr>
+</table> */}

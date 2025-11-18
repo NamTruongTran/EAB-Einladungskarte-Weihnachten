@@ -155,8 +155,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .main-content {
@@ -176,8 +183,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content-header {
@@ -361,6 +375,21 @@ body {
 
 .btn-outline:hover:not(:disabled) {
     background: var(--bg);
+}
+
+/* Logout-Button im Sidebar-Footer in Weiß darstellen */
+.sidebar-footer .btn-outline {
+    color: #ffffff;
+    /* Text weiß */
+    border-color: rgba(255, 255, 255, 0.6);
+    /* heller Rand */
+}
+
+/* Hover-Zustand auch weiß lassen */
+.sidebar-footer .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    /* leicht aufgehellter Hintergrund */
+    color: #ffffff;
 }
 
 .btn-icon {
@@ -790,7 +819,7 @@ body {
         gap: 12px;
     }
 
-    .email-template-header > div {
+    .email-template-header>div {
         width: 100%;
         justify-content: flex-end;
     }
@@ -817,6 +846,7 @@ body {
         transform: translateX(400px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
