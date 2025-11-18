@@ -91,7 +91,7 @@ async function handleLogin(e) {
 }
 
 async function logout() {
-    if (!confirm('Are you sure you want to logout?')) {
+    if (!confirm('Sind Sie sicher, dass Sie sich abmelden möchten?')) {
         return;
     }
 
@@ -313,8 +313,8 @@ function renderFriendsList() {
                 </div>
             </div>
             <div class="friend-actions">
-                <button class="btn btn-secondary" onclick="editFriend(${index})">✏️ Edit</button>
-                <button class="btn btn-danger" onclick="deleteFriend(${index})">🗑️ Delete</button>
+                <button class="btn btn-secondary" onclick="editFriend(${index})">✏️ Bearbeiten</button>
+                <button class="btn btn-danger" onclick="deleteFriend(${index})">🗑️ Entfernen</button>
             </div>
         </div>
     `).join('');
@@ -407,12 +407,12 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
 <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4;">
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
         <tr>
-            <td style="padding: 40px 20px;">
+            <td align="center" style="padding: 40px 20px;">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                     <!-- Header -->
                     <tr>
-                        <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, ${envelopeColor} 0%, ${darkerShade} 100%); border-radius: 8px 8px 0 0;">
-                            <p style="margin: 0 0 12px 0; font-size: 14px; color: ${envelopeTextColor}; opacity: 0.8; font-family: 'Dancing Script', cursive;">From: ${senderName}</p>
+                        <td style="padding: 40px 40px 20px; text-align: center; background: ${envelopeColor}; border-radius: 8px 8px 0 0;">
+                            <p style="margin: 0 0 12px 0; font-size: 14px; color: ${envelopeTextColor}; opacity: 0.8; font-family: 'Dancing Script', cursive;">Von: ${senderName}</p>
                             <h1 style="margin: 0; color: ${envelopeTextColor}; font-size: 32px; font-family: Georgia, 'Times New Roman', serif;">🎄 Frohe Weihnachten! 🎄</h1>
                         </td>
                     </tr>
@@ -420,7 +420,7 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                     <!-- Body -->
                     <tr>
                         <td style="padding: 40px;">
-                            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6; color: #333333;">Hi ${recipientName},</p>
+                            <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.6; color: #333333;">Hallo ${recipientName},</p>
 
                             <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: #555555;">
                                Ich wünsche dir ein wunderbares Weihnachtsfest und ein glückliches neues Jahr! Ich hoffe, dass diese Feiertage dir viel Freude und Glück bringen !
@@ -433,13 +433,28 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                             <!-- CTA Button -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
-                                    <td style="padding: 0 0 20px; text-align: center;">
-                                        <a href="${cardUrl}" style="display: inline-block; padding: 16px 40px; background-color: ${envelopeColor}; color: ${envelopeTextColor}; text-decoration: none; border-radius: 6px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-                                            🎁 Karte Öffnen
-                                        </a>
+                                    <td align="center" style="padding: 0 0 20px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                            <tr>
+                                                <td bgcolor="${envelopeColor}"
+                                                    style="background-color:${envelopeColor};
+                                                           border-radius:6px;
+                                                           padding:16px 40px;">
+                                                    <a href="${cardUrl}"
+                                                       style="font-size:18px;
+                                                              font-family: Arial, Helvetica, sans-serif;
+                                                              font-weight:bold;
+                                                              color:${envelopeTextColor};
+                                                              text-decoration:none;
+                                                              display:inline-block;">
+                                                        🎁 Karte Öffnen
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
-                            </table>
+                            </table> 
                         </td>
                     </tr>
 
@@ -447,11 +462,11 @@ function createEmailTemplate(recipientName, cardUrl, senderName, envelopeColor =
                     <tr>
                         <td style="padding: 30px 40px; text-align: center; background-color: #f9f9f9; border-radius: 0 0 8px 8px; border-top: 1px solid #e0e0e0;">
                             <p style="margin: 0; font-size: 14px; color: #888888;">
-                                Warm wishes,<br>
+                                Herzliche Grüße,<br>
                                 <strong style="font-size: 16px;">${senderName}</strong>
                             </p>
                             <p style="margin: 15px 0 0; font-size: 12px; color: #aaaaaa;">
-                                🎅 Happy Holidays! 🎄
+                                🎅 Erholsame Feiertage! 🎄
                             </p>
                         </td>
                     </tr>
@@ -768,7 +783,7 @@ async function saveFriend() {
 async function deleteFriend(index) {
     const friend = appState.friends[index];
 
-    if (!confirm(`Delete ${friend.name}?`)) {
+    if (!confirm(`${friend.name} entfernen?`)) {
         return;
     }
 
@@ -783,7 +798,7 @@ async function deleteFriend(index) {
         if (error) throw error;
 
         await loadData(); // Reload to get updated list
-        showNotification('Friend deleted successfully!', 'success');
+        showNotification('Person erfolgreich entfernt!', 'success');
     } catch (error) {
         console.error('Delete friend failed:', error);
         updateStatusIndicator('error');
@@ -904,3 +919,18 @@ document.addEventListener('keydown', (e) => {
         saveData();
     }
 });
+
+
+
+
+
+//Karte Öffnen
+// <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+//     <tr>
+//         <td style="padding: 0 0 20px; text-align: center;">
+//             <a href="${cardUrl}" style="display: inline-block; padding: 16px 40px; background-color: ${envelopeColor}; color: ${envelopeTextColor}; text-decoration: none; border-radius: 6px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+//                 🎁 Karte Öffnen
+//             </a>
+//         </td>
+//     </tr>
+// </table>
